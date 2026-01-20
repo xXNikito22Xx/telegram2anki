@@ -1,0 +1,6 @@
+python-telegram-bot==21.0
+google-generativeai==0.4.0
+genanki==0.13.1
+google-api-python-client==2.118.0
+google-auth==2.27.0
+python-dotenv==1.0.0
