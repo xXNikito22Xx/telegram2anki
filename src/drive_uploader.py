@@ -69,7 +69,8 @@ class DriveUploader:
             file = self.service.files().create(
                 body=file_metadata,
                 media_body=media,
-                fields='id'
+                fields='id',
+                                supportsAllDrives=True
             ).execute()
         
         return file.get('id')
@@ -83,7 +84,9 @@ class DriveUploader:
         
         results = self.service.files().list(
             q=query,
-            fields="files(id, name)"
+            fields="files(id, name)",
+                        supportsAllDrives=True,
+                        includeItemsFromAllDrives=True
         ).execute()
         
         files = results.get('files', [])
@@ -111,3 +114,4 @@ class DriveUploader:
         ).execute()
         
         return file.get('id')
+
