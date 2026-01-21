@@ -35,11 +35,11 @@ DATO A CONVERTIR:
 
 
 class GeminiClient:
-    """Client for Gemini API to generate flashcards."""f
+    """Client for Gemini API to generate flashcards."""
     
     def __init__(self, api_key: str):
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.5-flash'
+        self.model = genai.GenerativeModel('gemini-2.5-flash')
     
     def generate_cards(self, text: str) -> List[Dict]:
         """
@@ -91,4 +91,5 @@ class GeminiClient:
                 card["source_text"] = text
             all_cards.extend(cards)
         return all_cards
+
 
